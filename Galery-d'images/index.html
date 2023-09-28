@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Galery d'images</title>
+</head>
+<body>
+    <div class="container">
+    <i class="fa fa-angle-left" id="angle-gauche"></i>
+    <div class="gallery">
+        <div>
+        <img src="images/f1.jpg" alt="">
+        <img src="images/f2.jpg" alt="">
+        <img src="images/f3.jpg" alt="">
+    </div>
+    <div>
+        <img src="images/f4.png" alt="">
+        <img src="images/f5.png" alt="">
+        <img src="images/f6.png" alt="">
+    </div>
+    </div>
+    <i class="fa fa-angle-right" id="angle-droite"></i>
+</div>
+<script>
+    let scrollContainer = document.querySelector('.gallery')
+    let angle_droite = document.getElementById('angle-droite')
+    let angle_gauche = document.getElementById('angle-gauche')
+
+    scrollContainer.addEventListener('whell', (event) => {
+        event.preventDefault()
+        scrollContainer.scrollLeft += event.deltaY
+    })
+    angle_droite.addEventListener('click', () => {
+        scrollContainer.style.scrollBehavior = 'smooth'
+        scrollContainer.scrollLeft += 900
+    })
+    angle_gauche.addEventListener('click', () => {
+        scrollContainer.style.scrollBehavior = 'smooth'
+        scrollContainer.scrollLeft -= 900
+    })
+</script>
+</body>
+</html>
